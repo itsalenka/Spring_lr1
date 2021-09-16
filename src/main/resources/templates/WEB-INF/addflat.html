@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+    <title>Add flat</title>
+</head>
+<body>
+<div class="text-css">Add flat</div>
+<div class="container">
+    <form th:action="@{/addflat}" th:object="${flat}" method="POST">
+       <input type="text" th:field="*{address}" placeholder="Address" />
+       <input type="text" th:field="*{square}"  placeholder="Square"/>
+        <input type="text" th:field="*{rooms}"  placeholder="Rooms"/>
+        <input type="text" th:field="*{price}"  placeholder="Price"/>
+        <input class ="button-main-page" type="submit" value="Add" />
+        <div th:if="${errorMessage}" th:utext="${errorMessage}" style="color:red;font-style:italic;"> </div>
+    </form>
+</div>
+
+</body>
+</html>

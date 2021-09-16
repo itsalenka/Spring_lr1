@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+    <title>Add flat</title>
+</head>
+<body>
+<div class="text-css">Update flat</div>
+<div class="container">
+    <form th:object="${flat}" method="POST">
+        <h2>Address:</h2>
+        <h3 th:text="*{address}"/>
+        <h2>Square:</h2>
+        <h3 th:text="*{square}"/>
+        <h2>Rooms:</h2>
+        <h3 th:text="*{rooms}"/>
+        <h2>Price:</h2>
+        <input type="text" th:field="*{price}"  placeholder="Price"/>
+        <input class ="button-main-page" type="submit" value="Up" />
+    </form>
+</div>
+
+</body>
+</html>

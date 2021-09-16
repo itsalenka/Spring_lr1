@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+    <title>List</title>
+</head>
+<body>
+<div class="text-css">List of all apartments</div>
+<div>
+    <div class="a-css"><a th:href="@{/addflat}">Add apartment</a></div>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Address</th>
+        <th>Square</th>
+        <th>Rooms</th>
+        <th>Price</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each ="flat : ${flats}">
+        <td th:utext="${flat.address}">...</td>
+        <td th:utext="${flat.square}">...</td>
+        <td th:utext="${flat.rooms}">...</td>
+        <td th:utext="${flat.price}">...</td>
+        <td><a class="ast" th:href="'/delflat/' + ${flat.address}">Delete</a></td>
+        <td><a class="ast" th:href="'/upflat/' + ${flat.address}">Update</a></td>
+    </tr>
+    <div th:if="${errorMessage}" th:utext="${errorMessage}" style="color:red;font-style:italic;"> </div>
+
+    </tbody>
+</table>
+</body>
+</html>
